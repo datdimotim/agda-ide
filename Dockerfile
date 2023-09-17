@@ -99,5 +99,7 @@ COPY libraries /home/vscode/.agda/
 COPY defaults /home/vscode/.agda/
 
 RUN code --install-extension banacorn.agda-mode
+# fix open folder dialog
+RUN export QT_X11_NO_MITSHM=1
 CMD /bin/bash -c '/usr/bin/code --verbose --user-data-dir /userdata'
   
